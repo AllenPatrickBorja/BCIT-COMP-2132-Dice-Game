@@ -1,0 +1,333 @@
+/*
+
+GOOGLE FONTS
+
+*/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
+:root {
+  /* 
+
+     COLORS
+
+     */
+  --lighter-color: rgb(255, 254, 253);
+  --light-color:rgb(169, 217, 208);
+  --bright-medium-color:rgb(24, 182, 182);
+  --medium-color:rgb(3, 140, 127);
+  --dark-color:rgb(2, 115, 115);
+  --darker-color: rgb(13, 13, 13);
+  /* layout */
+  --content-gap: 15px;
+  /* ---Responsive Articles--- */
+  /* to ensure all <article> images are the same size */
+  --article-image-height:200px;
+  /* even if text is minimal, 
+     we will provide the same amount of vertical space */
+  --article-text-height:100px;
+  /* fonts */
+  --heading-font-face:"BebasNeue-Regular";
+  --article-text-font-face:"Prompt-Light";
+}
+
+/*box model reset*/
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+#wrapper {
+  max-width: 1918px;
+  margin: 0 auto;
+  padding: 0px;
+  background-color: #fffefd;
+  /*border-width: 0px 5px;
+
+  border-color:#D96690;
+
+  border-style: solid; */
+  display: flex;
+  flex-direction: column;
+  /*min-height: 100vh;*/
+}
+
+header {
+  padding: 20px 20px 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header, footer {
+  background-color: rgb(1, 84, 152);
+  margin: 0px;
+}
+
+footer {
+  padding: 20px 20px 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.footer-h2 {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex: 1;
+  font-family: "Bebas Neue", cursive;
+  font-size: 45px;
+  color: #fffefd;
+  text-shadow: 0 0 10px #0D0D0D;
+  text-align: center;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 50px;
+  color: #fffefd;
+  font-style: italic;
+  text-shadow: 0 0 10px #0D0D0D;
+}
+
+h2 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 50px;
+  text-align: center;
+}
+
+h3, h4, h5, h6 {
+  font-family: "Bebas Neue", cursive;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+h5 {
+  font-size: 27px;
+}
+
+h6 {
+  font-size: 23px;
+}
+
+p {
+  font-family: "Prompt", sans-serif;
+  text-align: center;
+  font-size: 20px;
+  color: var(--lighter-color);
+  text-shadow: 0 0 10px #0D0D0D;
+}
+
+#homepage {
+  padding: 5px;
+}
+
+main {
+  flex: 1;
+}
+
+article {
+  background-color: rgb(82, 167, 238);
+  border: solid 2px var(--darker-color);
+  min-height: 240px;
+  padding: 10px;
+  position: relative;
+  margin: 5px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.homepage-logo-link {
+  display: block;
+  max-width: 150px;
+  border-width: 0px;
+  margin: 0px 20px;
+}
+
+.logo-resize {
+  border-radius: 2em;
+}
+
+.fake-hyperlink {
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--bright-medium-color);
+  text-shadow: 0 0 2px var(--light-color);
+}
+
+/*
+
+Body Layout 
+
+*/
+body {
+  margin: 0;
+  /*font-family: verdana, serif; */
+}
+
+body {
+  /*
+  sticky footer effect 
+  with gridbox...
+  */
+  display: grid;
+  grid-template-columns: 100%;
+  /*
+  min height as tall as viweport
+  */
+  min-height: 100vh;
+  /*
+  the middle 1fr unit will make everything
+  below the <header>
+  and above the <footer>
+  stretch to fill
+  */
+  grid-template-rows: auto 1fr auto;
+}
+
+/*
+
+GRID TILES STUFF
+
+*/
+.homepage-tiles, .tiles {
+  /* single column design for 'mobile first' */
+  display: grid; /* make a grid container */
+  grid-template-columns: minmax(250px, 100%); /* single column */
+  gap: var(--content-gap); /* space each of the grid items apart */
+  margin: 0px var(--content-gap); /* some space on the left & right edges of grid box */
+}
+
+/*
+
+JAVA SCRIPT AND NAV STUFF                   ( use this code as reference and replace later for final product after troubleshooting first )
+
+*/
+article {
+  /* 
+  used to absolute position
+  the text overlays according to the article
+  */
+  position: relative;
+}
+
+/*
+
+MEDIA QUIERIES
+
+*/
+@media (min-width: 900px) {
+  .homepage-tiles, .lorem-ipsum-div, .tiles {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* 
+
+ASSIGNMENT 07 11/07/2023 FORM CSS
+
+*/
+label, select, option, input {
+  font-family: "Prompt", sans-serif;
+}
+
+.formStyle {
+  background-color: var(--bright-medium-color);
+  border: solid 2px var(--darker-color);
+  position: relative;
+}
+
+/* 
+
+ASSIGNMENT 08 11/11/2023 FORM CSS
+
+*/
+/*
+
+Pop-up CSS
+
+*/
+/* place a popup overlay overtop top of page content */
+#pop-up div {
+  /* vertically/horizontally center this element*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* basic box model stuff*/
+  max-width: 400px;
+  min-width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px rgb(250, 229, 1), 0 0 0 4px rgb(0, 0, 0), 0 0 0 8px rgb(0, 0, 0);
+  background-color: rgb(225, 170, 6);
+  color: white;
+}
+
+/* the close X button*/
+#close-pop-up {
+  background-color: white;
+  color: cadetblue;
+  border-radius: 50%;
+  font-weight: bold;
+  border: solid 3px rgb(0, 0, 0);
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+#close-pop-up:hover,
+#close-pop-up:focus,
+#close-pop-up:active {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  transform: scale(1.3);
+}
+
+@media (min-width: 700px) {
+  #pop-up {
+    font-size: 1em;
+  }
+}
+/* 
+
+Final Project 11/29/2023 CSS
+
+*/
+.dice {
+  border-radius: 2em;
+}
+
+button {
+  border-radius: 2em;
+  border: solid rgb(1, 84, 152);
+  background-color: white;
+  font-family: "Prompt", sans-serif;
+  font-size: 20px;
+}
+
+hr {
+  color: rgb(1, 84, 152);
+}
+
+.winner {
+  color: var(--darker-color);
+}
